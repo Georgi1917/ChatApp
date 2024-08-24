@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+
+    <form id="form">
+        <input type="text" name="message">
+    </form>
+
+    <div id="messages"></div>
+
+    <script src="{% static 'web-socket-connection.js' %}" type="text/javascript"></script>
+</body>
+</html>
