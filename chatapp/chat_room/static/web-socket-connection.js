@@ -4,12 +4,11 @@ const chatSocket = new WebSocket(url)
 
 chatSocket.onmessage = function(e){
     let data = JSON.parse(e.data)
-    console.log(`Data:${data}`)
 
     if (data.type === "chat") {
         let messages = document.getElementById("messages")
         let pMessageElement = document.createElement("p")
-        pMessageElement.textContent = data.message
+        pMessageElement.textContent = `${data.username} : ${data.message}`
         messages.appendChild(pMessageElement)
     }
 }

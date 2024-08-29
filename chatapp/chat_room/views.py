@@ -1,6 +1,11 @@
+import json
 from django.shortcuts import render, redirect
 from chat_room.forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from asgiref.sync import async_to_sync
+from channels.layers import get_channel_layer
+from chat_room import consumers
 
 # Create your views here.
 
@@ -58,4 +63,5 @@ def login_user(request):
         return render(request, 'chat_room/login.html', context)
 
 def chat_room(request, user_id):
+
     return render(request, "chat_room/index.html")
