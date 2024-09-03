@@ -9,6 +9,10 @@ chatSocket.onmessage = function(e){
         let messages = document.getElementById("messages")
         let pMessageElement = document.createElement("p")
         pMessageElement.textContent = `${data.username} : ${data.message}`
+        if (data.message_foreign_id === data.user_id) {
+            pMessageElement.style.color = "red"
+        }
+
         messages.appendChild(pMessageElement)
     }
 }
